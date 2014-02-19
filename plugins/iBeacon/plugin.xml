@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="iBeacon"
+    version="1.0.0">
+    <name>iBeacon</name>
+	<description>todo</description>
+	<license>todo</license>
+	<keywords>todo</keywords>
+    <js-module src="www/iBeacon.js" name="iBeacon">
+        <clobbers target="iBeacon" />
+    </js-module>
+    <!-- ios -->
+    <platform name="ios">     
+		<framework src="CoreBluetooth.framework" />
+		<framework src="CoreLocation.framework" />
+		<framework src="SystemConfiguration.framework" />
+        <header-file src="src/ios/iBeacon.h" />
+        <source-file src="src/ios/iBeacon.m" />
+
+    	<config-file target="config.xml" parent="/*">
+            <feature name="iBeacon">
+                <param name="ios-package" value="iBeacon" />
+            </feature>
+        </config-file>
+	</platform>
+</plugin>
